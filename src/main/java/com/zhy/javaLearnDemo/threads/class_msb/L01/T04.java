@@ -1,5 +1,8 @@
 package com.zhy.javaLearnDemo.threads.class_msb.L01;
 
+import java.util.Collections;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /**
  * @ClassName: T04
  * @Description: states of the thread
@@ -35,7 +38,6 @@ public class T04 extends Thread{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         System.out.println(t04.getState());
     }
 
