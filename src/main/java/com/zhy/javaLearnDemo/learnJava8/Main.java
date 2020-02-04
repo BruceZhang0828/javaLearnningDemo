@@ -37,7 +37,9 @@ public class Main {
         //testLimit();
         //testSkip();
         //testReduce();
-        testMin(students);
+        //testMin(students);
+        //collect();
+        collectFromList();
     }
 
     private static void testMin(List<Student> students) {
@@ -112,6 +114,36 @@ public class Main {
         collect.forEach(System.out::println);
         return collect;
 
+    }
+
+
+    // list 转变为 字符串拼接
+
+    private static  String collect(){
+        List<String> list = new ArrayList<>();
+        list.add("xn");
+        list.add("db");
+        list.add("dq");
+        list.add("sc");
+        String collect = list.stream().collect(Collectors.joining(","));
+        System.out.println(collect);
+        return collect;
+    }
+
+
+    private static String collectFromList(){
+        List<Student> students = new ArrayList<>();
+        Student student1 = new Student(1000L,"zhang1",18,"大望路");
+        Student student2 = new Student(1001L,"zhang2",18,"大望路");
+        Student student3 = new Student(1002L,"zhang3",18,"大望路");
+        Student student4 = new Student(1003L,"zhang4",18,"大望路");
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
+        String ids = students.stream().map(student -> student.getId().toString()).collect(Collectors.joining(","));
+        System.out.println(ids);
+        return ids;
     }
 
 
